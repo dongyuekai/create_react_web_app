@@ -5,11 +5,18 @@ const px2rem = require('postcss-px2rem-exclude')
 
 module.exports = override(
   // 针对antd 和 antd-mobile 按需加载
-  fixBabelImports('import', {
-    libraryName: ['antd', 'antd-mobile'],
-    libraryDirectory: 'es',
-    style: true
-  }),
+  fixBabelImports('import',
+    {
+      libraryName: ['antd'],
+      libraryDirectory: 'es',
+      style: 'css'
+    },
+    {
+      libraryName: ['antd-mobile'],
+      libraryDirectory: 'es',
+      style: 'css'
+    }
+  ),
   // 增加路径别名处理
   addWebpackAlias({
     "@": path.resolve('./src')
