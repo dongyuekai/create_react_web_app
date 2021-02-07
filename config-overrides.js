@@ -7,12 +7,7 @@ module.exports = override(
   // 针对antd 和 antd-mobile 按需加载
   fixBabelImports('import',
     {
-      libraryName: ['antd'],
-      libraryDirectory: 'es',
-      style: 'css'
-    },
-    {
-      libraryName: ['antd-mobile'],
+      libraryName: 'antd-mobile',
       libraryDirectory: 'es',
       style: 'css'
     }
